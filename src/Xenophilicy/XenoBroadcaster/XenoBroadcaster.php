@@ -14,6 +14,7 @@ class XenoBroadcaster extends PluginBase implements Listener{
 	private $config;
 	public $random = false;
 	public $exp;
+	public $core;
 	public static $serverInstance;
 
     	public function onLoad()
@@ -45,6 +46,7 @@ class XenoBroadcaster extends PluginBase implements Listener{
 		}
 		elseif(is_integer($this->config->get("Interval"))){
 			$this->getLogger()->Info("§6AutoEXP§a has been enabled!");
+			$this->core = Server::getInstance()->getPluginManager()->getPlugin("CoreX2");
 			$this->getScheduler()->scheduleRepeatingTask(new BroadcastTask(), $this->config->get("Interval") * 1200);
 			if($this->config->getNested("Experience.type") == "random")
 			{
