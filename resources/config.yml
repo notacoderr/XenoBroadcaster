@@ -1,6 +1,6 @@
 # Example → Interval: 30 = 30 minutes
-Interval: 33
-Experience:
+interval: 33
+experience:
   type: random #random or fixed
   amount_fixed: 56
   amount_random: 43:56
